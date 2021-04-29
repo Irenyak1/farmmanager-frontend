@@ -134,7 +134,7 @@ export default class SupplierForm extends Component {
   }
 
   InsertDataToServer = async () => {
-    fetch("http://127.0.0.1:8000/api/supplier/", {
+    fetch("https://farmmanager-api.herokuapp.com/api/supplier/", {
       method: "POST",
       headers: {
         Accept: "application/json",

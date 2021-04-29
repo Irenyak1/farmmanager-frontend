@@ -32,17 +32,18 @@ class SupplierLand extends Component {
             }}
           >
             <Text style={{ color: "#228B22" }}>
-              Supplier : {supplier.suppl}
-            </Text>
-            <Text style={{ color: "#228B22" }}>Date: {supplier.date}</Text>
-            <Text style={{ color: "#228B22" }}>
-              Product: {supplier.product}
+              Supplier : {supplier.name}
             </Text>
             <Text style={{ color: "#228B22" }}>
-              Quantity: {supplier.quantity}
+              Company Name: {supplier.companyname}
             </Text>
             <Text style={{ color: "#228B22" }}>
-              Amount Paid Sh: {supplier.amountpaid}
+              Phone No.: {supplier.telephone1}
+            </Text>
+            <Text style={{ color: "#228B22" }}>
+              Email Address: {supplier.email}</Text>
+            <Text style={{ color: "#228B22" }}>
+              Business Address: {supplier.busaddress}
             </Text>
           </TouchableOpacity>
         </View>

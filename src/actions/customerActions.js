@@ -9,8 +9,7 @@ import {
 
 //FETCH CUSTOMERS
 export const getCustomers = () => dispatch => {
-  axios
-    .get("http://localhost:8000/api/customer/")
+  axios.get("https://farmmanager-api.herokuapp.com/api/customer/")
     .then(res => {
       dispatch({
         type: GET_CUSTOMER,
@@ -20,10 +19,11 @@ export const getCustomers = () => dispatch => {
     .catch(err => console.log("Not able to fetch customers", err));
 };
 
+
 //DELETE CUSTOMER
 export const deleteCustomer = id => dispatch => {
   axios
-    .delete(`http://localhost:8000/api/customer/${id}/`)
+    .delete(`https://farmmanager-api.herokuapp.com/api/customer/${id}/`)
     .then(res => {
       dispatch({
         type: DELETE_CUSTOMER,
@@ -36,7 +36,7 @@ export const deleteCustomer = id => dispatch => {
 // GET DETAILS OF COSTUMER
 export const detailCustomer = id => dispatch => {
   axios
-    .get(`http://localhost:8000/api/customer/${id}/`)
+    .get(`https://farmmanager-api.herokuapp.com/api/customer/${id}/`)
     .then(res => {
       dispatch({
         type: DETAIL_CUSTOMER,

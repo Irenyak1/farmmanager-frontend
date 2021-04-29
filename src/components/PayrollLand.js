@@ -37,7 +37,7 @@ class PayrollLand extends Component {
               Position: {payroll.position}
             </Text>
             <Text style={{ color: "#228B22" }}>
-              Salary Amount: {payroll.salaryamnt}
+              Salary Amount: {payroll.netsalary}
             </Text>
             <Text style={{ color: "#228B22" }}>
               Advanced Amount: {payroll.advance}

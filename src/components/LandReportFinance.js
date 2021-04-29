@@ -128,7 +128,7 @@ export default function LandReportFinace({ navigation }) {
                 }}
                 source={require("../images/purchase_order_icon.jpg")}
               />
-              <Text>ORDERS</Text>
+              <Text>REQUISITIONS</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigation.navigate("Payroll Summaries")}
