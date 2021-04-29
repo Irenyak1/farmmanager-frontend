@@ -172,7 +172,7 @@ export default class ExpenditureForm extends Component {
   }
 
   InsertDataToServer = async () => {
-    fetch("http://127.0.0.1:8000/api/expenditure/", {
+    fetch("https://farmmanager-api.herokuapp.com/api/expenditure/", {
       method: "POST",
       headers: {
         Accept: "application/json",

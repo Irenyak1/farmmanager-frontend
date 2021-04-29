@@ -17,13 +17,21 @@ const Phone = t.refinement(t.Number, Phone => {
   return reg.test(Phone);
 });
 
+// const Farm = t.struct({
+//   Name: t.String,
+//   Location: t.String,
+//   Address: t.String,
+//   ContactPerson: t.String,
+//   Phone: Phone,
+//   Tin: t.Number
+// });
+
 const Farm = t.struct({
   Name: t.String,
   Location: t.String,
-  Address: t.String,
-  ContactPerson: t.String,
+  Tin: t.maybe(t.Number),
   Phone: Phone,
-  Tin: t.Number
+  Description: t.maybe(t.String),
 });
 
 const formStyles = {
@@ -58,25 +66,21 @@ const options = {
       returnKeyType: "next",
       error: "Please fill this field"
     },
-    Address: {
-      label: "Farm Address",
-      returnKeyType: "next",
-      error: "Please fill this field"
-    },
-    ContactPerson: {
-      label: "Contact Person",
-      returnKeyType: "next",
-      error: "Please fill this field"
+    Tin: {
+      label: "TIN",
+      error: "Please enter correct TIN"
     },
     Phone: {
       label: "Phone Number",
       returnKeyType: "next",
       error: "Please enter a correct phone number"
     },
-    Tin: {
-      label: "TIN",
-      error: "Please enter correct TIN"
-    }
+    Description: {
+      label: "Description",
+      returnKeyType: "next",
+      error: "Please enter a description"
+    },
+    
   },
   stylesheet: formStyles
 };
@@ -88,7 +92,7 @@ export default class FarmForm extends Component {
   }
 
   InsertDataToServer = async () => {
-    fetch("http://127.0.0.1:8000/api/farm/", {
+    fetch("https://farmmanager-api.herokuapp.com/api/farm/", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -97,15 +101,14 @@ export default class FarmForm extends Component {
       body: JSON.stringify({
         name: this.Name,
         location: this.Location,
-        address: this.Address,
-        contactperson: this.ContactPerson,
+        tin: this.Tin,
         phone: this.Phone,
-        tin: this.Tin
+        description: this.Description       
       })
     })
       .then(response => response.json())
       .then(responseJson => {
-        // alert("Thank You for Signing Up!");
+        alert("Farm was successfully added!");
         Alert.alert(responseJson);
         this.props.navigation.navigate("Login");
       })
@@ -129,10 +132,9 @@ export default class FarmForm extends Component {
     if (value != null) {
       (this.Name = value.Name),
         (this.Location = value.Location),
-        (this.Address = value.Address),
-        (this.ContactPerson = value.ContactPerson),
-        (this.Phone = value.Phone),
         (this.Tin = value.Tin),
+        (this.Phone = value.Phone),
+        (this.Description = value.Description),
         this.InsertDataToServer();
       // clear all fields after submit
       this.clearForm();
@@ -157,8 +159,8 @@ export default class FarmForm extends Component {
               <Button
                 color="#0A802B"
                 title="REGISTER"
-                // onPress={this.handleSubmit.bind(this)}
-                onPress={() => navigation.navigate("Login")}
+                onPress={this.handleSubmit.bind(this)}
+                // onPress={() => navigation.navigate("Login")}
               />
             </View>
           </View>

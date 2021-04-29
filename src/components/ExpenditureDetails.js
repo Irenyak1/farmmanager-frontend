@@ -10,7 +10,7 @@ import {
   Image,
   StyleSheet
 } from "react-native";
-import { deleteExpenditure, detailExpenditure } from "../actions/incomeActions";
+import { deleteExpenditure, detailExpenditure } from "../actions/expenditureActions";
 import { connect } from "react-redux";
 
 class ExpenditureDetails extends Component {

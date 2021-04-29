@@ -26,23 +26,24 @@ class EmployeeLand extends Component {
         <View style={styles.container}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("employee Details", {
+              navigation.navigate("Employee Details", {
                 itemId: employee.id
               });
             }}
           >
             <Text style={{ color: "#228B22" }}>
-              employee : {employee.suppl}
-            </Text>
-            <Text style={{ color: "#228B22" }}>Date: {employee.date}</Text>
-            <Text style={{ color: "#228B22" }}>
-              Product: {employee.product}
+              Name : {employee.fullname}
             </Text>
             <Text style={{ color: "#228B22" }}>
-              Quantity: {employee.quantity}
+            Employee No.: {employee.employeeno}</Text>
+            <Text style={{ color: "#228B22" }}>
+              Gender: {employee.gender}
             </Text>
             <Text style={{ color: "#228B22" }}>
-              Amount Paid Sh: {employee.amountpaid}
+              Position: {employee.position}
+            </Text>
+            <Text style={{ color: "#228B22" }}>
+              Phone No.: {employee.phone1}
             </Text>
           </TouchableOpacity>
         </View>

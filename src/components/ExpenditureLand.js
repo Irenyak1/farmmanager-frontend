@@ -26,7 +26,7 @@ class ExpenditureLand extends Component {
         <View style={styles.container}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("ExpenditureDetails", {
+              navigation.navigate("Expenditure Details", {
                 itemId: expenditure.id
               });
             }}

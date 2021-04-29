@@ -15,6 +15,8 @@ import {
   removeOrientationListener as rol
 } from "react-native-responsive-screen";
 import moment from "moment";
+import { KeyboardAvoidingView } from "react-native";
+import { KeyboardAvoidingViewBase } from "react-native";
 var t = require("tcomb-form-native");
 const Form = t.form.Form;
 
@@ -183,7 +185,7 @@ export default class Advance extends Component {
 
   handleSubmit = () => {
     const value = this._form.getValue();
-    console.log(value.name);
+    console.log(value);
     if (value != null) {
       (this.date = value.date),
         (this.name = value.name),
@@ -203,8 +205,8 @@ export default class Advance extends Component {
   };
   render() {
     return (
-      <SafeAreaView style={styles.container} behavior="padding" enabled>
-        <ScrollView>
+      // <SafeAreaView style={styles.container} behavior="padding" enabled>
+        <ScrollView style={styles.container} behavior="padding" enabled>
           <View>
             <Text style={styles.title}>Advance Form</Text>
             <Form
@@ -225,7 +227,7 @@ export default class Advance extends Component {
             </TouchableOpacity>
           </View>
         </ScrollView>
-      </SafeAreaView>
+      // {/* </SafeAreaView> */}
     );
   }
 }

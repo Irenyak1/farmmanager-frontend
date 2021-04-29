@@ -32,17 +32,18 @@ class CustomerLand extends Component {
             }}
           >
             <Text style={{ color: "#228B22" }}>
-              Supplier : {customer.suppl}
-            </Text>
-            <Text style={{ color: "#228B22" }}>Date: {customer.date}</Text>
-            <Text style={{ color: "#228B22" }}>
-              Product: {customer.product}
+              Customer : {customer.name}
             </Text>
             <Text style={{ color: "#228B22" }}>
-              Quantity: {customer.quantity}
+              Company: {customer.companyname}
             </Text>
             <Text style={{ color: "#228B22" }}>
-              Amount Paid Sh: {customer.amountpaid}
+              Phone No.: {customer.telephone1}
+            </Text>
+            <Text style={{ color: "#228B22" }}>
+              Email: {customer.email}</Text>
+            <Text style={{ color: "#228B22" }}>
+              Delivery Address: {customer.deliveryaddress}
             </Text>
           </TouchableOpacity>
         </View>
@@ -52,13 +53,14 @@ class CustomerLand extends Component {
       <ScrollView>
         <View>
           <Text style={styles.heading}> Customer Summaries </Text>
-          {customerItems}
+          {/* {customerItems} */}
           <TouchableOpacity
             style={styles.TouchableOpacityStyle}
             onPress={() => navigation.navigate("Customer Form")}
           >
             <Text style={styles.TouchableOpacityAdd}>+ Add</Text>
           </TouchableOpacity>
+          {customerItems}
         </View>
       </ScrollView>
     );

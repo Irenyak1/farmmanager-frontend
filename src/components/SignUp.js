@@ -84,7 +84,7 @@ export default class SignUp extends Component {
     }
 
   InsertDataToServer = async () => {
-    fetch("http://127.0.0.1:8000/api/user/", {
+    fetch("https://farmmanager-api.herokuapp.com/api/user/", {
       method: "POST",
       headers: {
         Accept: "application/json",
